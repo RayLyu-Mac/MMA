@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mma_mse/user_note.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'BackG.dart';
 import 'package:mma_mse/equipment/functionButtonMode.dart';
 import 'package:mma_mse/Instruction/icp_instruction/icpMain.dart';
 import 'package:mma_mse/SendEmail/sendEmailMain.dart';
 
-class ICP_OES_Main extends StatefulWidget {
-  ICP_OES_Main({Key key}) : super(key: key);
+class KeyenceMMain extends StatefulWidget {
+  KeyenceMMain({Key key}) : super(key: key);
 
   @override
-  _ICP_OES_MainState createState() => _ICP_OES_MainState();
+  _KeyenceMMainState createState() => _KeyenceMMainState();
 }
 
-class _ICP_OES_MainState extends State<ICP_OES_Main> {
+class _KeyenceMMainState extends State<KeyenceMMain> {
   double _screenWidth;
   double _screenH;
 
@@ -28,7 +27,7 @@ class _ICP_OES_MainState extends State<ICP_OES_Main> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ICP-OES"),
+        title: Text("Keyence Microscope"),
         backgroundColor: Colors.black,
       ),
       body: SafeArea(
@@ -49,7 +48,7 @@ class _ICP_OES_MainState extends State<ICP_OES_Main> {
                   constraints: BoxConstraints.expand(
                       width: _screenWidth / 2.2, height: 280),
                   child: Text(
-                    'ICP-OES (Inductively coupled plasma - optical emission spectrometry) is a technique in which the composition of elements in (mostly water-dissolved) samples can be determined using plasma and a spectrometer. The technique has been commercially available since 1974 and thanks to its reliability, multi-element options and high throughput, it has become a widely applied in both routine research as in more specific analysis purposes.',
+                    'A microscope that can observe uneven surfaces and 3D objects with clear images thanks to its large depth of field and long observation distance. Together with a model that uses a full control system to provide high-resolution observation that rivals an SEM, this lineup includes entry models equipped with frequently used functions. Dedicated lenses that bring out the best performance of microscopes are also available.',
                     style: TextStyle(
                         fontSize: _screenH / 55, fontWeight: FontWeight.bold),
                   )),
@@ -63,7 +62,7 @@ class _ICP_OES_MainState extends State<ICP_OES_Main> {
                         width: _screenWidth / 2.5, height: _screenH / 2),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assest/equipment/icp.jpg"),
+                          image: AssetImage("assest/equipment/kms.jpg"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(10),
                     )),
@@ -87,7 +86,7 @@ class _ICP_OES_MainState extends State<ICP_OES_Main> {
                 top: _screenH / 1.8,
                 left: _screenWidth / 2 + 16,
                 buttonName: "Theory",
-                pageTo: ICP_OES_bg()),
+                pageTo: icp_instruction()),
             functionButtonMode(
                 top: _screenH / 1.56,
                 left: _screenWidth / 2 + 16,

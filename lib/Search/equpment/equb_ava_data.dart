@@ -74,6 +74,13 @@ class HeroType {
           fText: 'Avaiable on JHE 242',
           image: 'assest/equipment/mht.jpg',
           pageTo: AutomaticMicroHardnessMain(),
+          materialColor: Colors.blue))
+      ..add(HeroType(
+          title: 'Keyence Microscope',
+          subTitle: 'Microscope for microstructure analysis',
+          fText: 'Avaiable on JHE 241',
+          image: 'assest/equipment/kms.jpg',
+          pageTo: AutomaticMicroHardnessMain(),
           materialColor: Colors.blue));
   }
 }
