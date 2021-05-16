@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 import 'dart:async';
 import 'dart:io';
-import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 
@@ -50,144 +49,142 @@ class _EmailContentState extends State<EmailContent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Report Issue to Equipment Manager"),
+        title: Text(
+          "Report Issue to Equipment Manager",
+          style: TextStyle(fontSize: _screenH / 40),
+        ),
         backgroundColor: Colors.black,
       ),
       resizeToAvoidBottomInset: false,
-      body: Center(
-          child: Container(
-        constraints: BoxConstraints.expand(
-            width: _screenWidth / 1.1, height: _screenH / 1.3),
-        child: Stack(
-          children: [
-            Positioned(
-              top: _screenH / 85,
-              left: _screenWidth / 50,
+      body: Stack(
+        children: [
+          Positioned(
+              top: _screenH / 45,
+              left: _screenWidth / 15,
+              child: Text(
+                "*Please make sure the error report is valid",
+                style: TextStyle(color: Colors.redAccent),
+              )),
+          Positioned(
+            top: _screenH / 15,
+            left: _screenWidth / 15,
+            child: Container(
+              constraints: BoxConstraints.expand(
+                  width: _screenWidth / 1.15, height: _screenH / 8),
+              child: TextField(
+                controller: name,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                      gapPadding: 6,
+                      borderSide: BorderSide(width: 3.0, color: Colors.black)),
+                  labelText: "Name",
+                  hintText: "Write your name here",
+                  labelStyle: TextStyle(
+                      fontSize: _screenH / 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                  suffixIcon: Icon(
+                    Icons.supervised_user_circle,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+              top: _screenH / 5.4,
+              left: _screenWidth / 15,
               child: Container(
                 constraints: BoxConstraints.expand(
-                    width: _screenWidth / 1.2, height: _screenH / 6),
+                    width: _screenWidth / 1.15, height: _screenH / 2.5),
                 child: TextField(
-                  controller: name,
+                  controller: errorMessage,
+                  maxLines: null,
+                  expands: true,
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                        gapPadding: 6,
+                        borderSide:
+                            BorderSide(width: 3.0, color: Colors.black)),
                     focusedBorder: OutlineInputBorder(
                         gapPadding: 6,
                         borderSide:
                             BorderSide(width: 3.0, color: Colors.black)),
-                    labelText: "Name",
-                    hintText: "Write your name here",
+                    labelText: "Error Message",
+                    hintText: "Please be specific with the error:",
                     labelStyle: TextStyle(
                         fontSize: _screenH / 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
                     suffixIcon: Icon(
-                      Icons.supervised_user_circle,
+                      Icons.error_outline_outlined,
                       color: Colors.black,
                     ),
                   ),
                 ),
-              ),
-            ),
-            Positioned(
-                top: _screenH / 8.6,
-                left: _screenWidth / 50,
-                child: Container(
-                  constraints: BoxConstraints.expand(
-                      width: _screenWidth / 1.2, height: _screenH / 2.5),
-                  child: TextField(
-                    controller: errorMessage,
-                    maxLines: null,
-                    expands: true,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                          gapPadding: 6,
-                          borderSide:
-                              BorderSide(width: 3.0, color: Colors.black)),
-                      labelText: "Error Message",
-                      hintText: "Please be specific with the error:",
-                      labelStyle: TextStyle(
-                          fontSize: _screenH / 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      suffixIcon: Icon(
-                        Icons.error_outline_outlined,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                )),
-            Positioned(
-                top: _screenH / 1.46,
-                left: _screenWidth / 50,
-                child: Container(
-                  constraints: BoxConstraints.expand(
-                      width: _screenWidth / 1.2, height: _screenH / 16),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.black, width: 4)),
-                  child: InkWell(
-                      splashColor: Colors.blueGrey,
-                      child: FlatButton.icon(
-                          onPressed: () => send(),
-                          icon: Icon(Icons.email_rounded),
-                          label: Text("Contact Manager"))),
-                )),
-            Positioned(
-                top: _screenH / 1.9,
-                left: _screenWidth / 50,
-                child: Padding(
-                  padding: EdgeInsets.all(3.0),
-                  child: Wrap(
-                    children: [
-                      for (var i = 0; i < attachments.length; i++)
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Expanded(
-                                flex: 0,
-                                child: Container(
-                                  margin: EdgeInsets.all(10),
-                                  width: _screenWidth / 6,
-                                  height: _screenH / 16,
-                                  child: Image.file(File(attachments[i]),
-                                      fit: BoxFit.cover),
-                                )),
-                            IconButton(
-                              icon: Icon(Icons.remove_circle),
-                              onPressed: () => {_removeAttachment(i)},
-                            )
-                          ],
-                        )
-                    ],
-                  ),
-                )),
-            Positioned(
+              )),
+          Positioned(
+              top: _screenH / 1.3,
+              left: _screenWidth / 11,
+              child: Container(
+                constraints: BoxConstraints.expand(
+                    width: _screenWidth / 1.15, height: _screenH / 16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Colors.black, width: 4)),
+                child: InkWell(
+                    splashColor: Colors.blueGrey,
+                    child: FlatButton.icon(
+                        onPressed: () => send(),
+                        icon: Icon(Icons.email_rounded),
+                        label: Text("Contact Manager"))),
+              )),
+          Positioned(
               top: _screenH / 1.8,
-              left: _screenWidth / 1.32,
-              child: IconButton(
-                icon: Icon(
-                  Icons.attach_file_outlined,
-                  size: _screenH / 26,
+              left: _screenWidth / 50,
+              child: Padding(
+                padding: EdgeInsets.all(3.0),
+                child: Wrap(
+                  children: [
+                    for (var i = 0; i < attachments.length; i++)
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Expanded(
+                              flex: 0,
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                width: _screenWidth / 6,
+                                height: _screenH / 16,
+                                child: Image.file(File(attachments[i]),
+                                    fit: BoxFit.cover),
+                              )),
+                          IconButton(
+                            icon: Icon(Icons.remove_circle),
+                            onPressed: () => {_removeAttachment(i)},
+                          )
+                        ],
+                      )
+                  ],
                 ),
-                onPressed: _openImagePicker,
+              )),
+          Positioned(
+            top: _screenH / 1.7,
+            left: _screenWidth / 1.2,
+            child: IconButton(
+              icon: Icon(
+                Icons.attach_file_outlined,
+                size: _screenH / 26,
               ),
-            )
-          ],
-        ),
-      )),
+              onPressed: _openImagePicker,
+            ),
+          )
+        ],
+      ),
     );
-  }
-
-  _launchURL(String toMailId, String subject, String body) async {
-    var url = 'mailto:$toMailId?subject=$subject&body=$body';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 
   Future _openImagePicker() async {

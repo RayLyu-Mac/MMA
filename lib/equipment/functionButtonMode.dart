@@ -77,8 +77,8 @@ class _functionButtonModeState extends State<functionButtonMode> {
         },
         splashColor: Colors.grey,
         child: Container(
-          width: _screenWidth / 2.9,
-          height: _screenH / 16,
+          width: _screenWidth / 2.7,
+          height: _screenH / 15,
           padding: EdgeInsets.all(6),
           child: Text(
             widget.buttonName,

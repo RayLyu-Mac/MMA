@@ -47,7 +47,7 @@ class video {
                 "ID brightfield, polarize and dark field light, adjust them based on the case",
             materialcolor: Colors.amber[600],
             videoController: YoutubePlayerController(
-              initialVideoId: '4hs7BH65vLI',
+              initialVideoId: 'V8abiMLr2cY',
               flags: YoutubePlayerFlags(
                 autoPlay: true,
                 mute: false,
@@ -60,7 +60,7 @@ class video {
             subtitle: "Process of taking image and save",
             materialcolor: Colors.pink[400],
             videoController: YoutubePlayerController(
-              initialVideoId: '8N6aS5wIjDM',
+              initialVideoId: '4hs7BH65vLI',
               flags: YoutubePlayerFlags(
                 autoPlay: true,
                 mute: false,

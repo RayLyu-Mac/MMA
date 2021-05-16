@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:mma_mse/equipment/functionButtonMode.dart';
 import 'package:mma_mse/Instruction/icp_instruction/icpMain.dart';
 import 'package:mma_mse/SendEmail/sendEmailMain.dart';
+import 'package:mma_mse/Instruction/KeyenceMicroscope/keyenceMain.dart';
 
 class KeyenceMMain extends StatefulWidget {
   KeyenceMMain({Key key}) : super(key: key);
@@ -69,13 +70,12 @@ class _KeyenceMMainState extends State<KeyenceMMain> {
               ),
             ),
             functionButtonMode(
-              top: _screenH / 1.56,
-              left: _screenWidth / 12,
-              buttonName: "Instruction",
-              warnNote:
-                  "•Make Sure the smaples used have been properly polished and etched\n•",
-              pageTo: icp_instruction(),
-            ),
+                top: _screenH / 1.56,
+                left: _screenWidth / 12,
+                buttonName: "Instruction",
+                warnNote:
+                    "•Make Sure the smaples used have been properly polished and etched\n•",
+                pageTo: KeyenceMicroInstru()),
             functionButtonMode(
               top: _screenH / 1.8,
               left: _screenWidth / 12,

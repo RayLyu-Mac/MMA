@@ -70,6 +70,7 @@ class _KeyenceMicroInstruState extends State<KeyenceMicroInstru> {
                 TextStyle(fontSize: _screenH / 35, fontWeight: FontWeight.bold),
           ),
         ),
+        drawer: keyenceInstruction(),
         body: SafeArea(
           child: ListView.builder(
             controller: controller,

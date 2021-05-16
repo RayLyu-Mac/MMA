@@ -4,6 +4,7 @@ import 'package:mma_mse/equipment/UTM/universal_tensile_machine_MainPage.dart';
 import "package:mma_mse/equipment/BulkAbrasive/BulkAbrasiveMain.dart";
 import 'package:mma_mse/equipment/Automatic Micro Hardness Tester/AMHMain.dart';
 import 'package:mma_mse/equipment/CharpyImpact/Charpy.dart';
+import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
 
 class HeroType {
   String title;
@@ -80,7 +81,7 @@ class HeroType {
           subTitle: 'Microscope for microstructure analysis',
           fText: 'Avaiable on JHE 241',
           image: 'assest/equipment/kms.jpg',
-          pageTo: AutomaticMicroHardnessMain(),
-          materialColor: Colors.blue));
+          pageTo: KeyenceMMain(),
+          materialColor: Colors.blueAccent));
   }
 }
