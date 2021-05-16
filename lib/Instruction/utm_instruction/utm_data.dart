@@ -44,7 +44,7 @@ class video {
         video(
             title: "Step 2: Set Up Machine",
             subtitle: "Activate the machine and sofrware",
-            materialcolor: Colors.blue[400],
+            materialcolor: Colors.orange[400],
             videoController: YoutubePlayerController(
               initialVideoId: 'bO1Y0nYougA',
               flags: YoutubePlayerFlags(
@@ -57,7 +57,7 @@ class video {
         video(
             title: "Step 3: Load Sample",
             subtitle: "Make Sure to keep your hands out from the pich hole",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.orangeAccent[700],
             videoController: YoutubePlayerController(
               initialVideoId: 'NW2WctbMRSM',
               flags: YoutubePlayerFlags(
@@ -70,7 +70,7 @@ class video {
         video(
             title: "Introduction to Extensometer",
             subtitle: "Component and placement",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.blueGrey[400],
             videoController: YoutubePlayerController(
               initialVideoId: 'TaYvrKsKB2E',
               flags: YoutubePlayerFlags(
@@ -83,7 +83,7 @@ class video {
         video(
             title: "Extensometer used for round /flat sample and installing",
             subtitle: "Usage for extensometer",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.blueGrey,
             videoController: YoutubePlayerController(
               initialVideoId: 'td-n2COgNOc',
               flags: YoutubePlayerFlags(
@@ -96,7 +96,7 @@ class video {
         video(
             title: "Round Grid Installation",
             subtitle: "How to use a round grip in MTS test frame",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.lightGreen,
             videoController: YoutubePlayerController(
               initialVideoId: 'KP5-aSmR_B0',
               flags: YoutubePlayerFlags(
@@ -109,7 +109,7 @@ class video {
         video(
             title: "Step 4: Begin the Test",
             subtitle: "Action needed for both machine and the software",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.red,
             videoController: YoutubePlayerController(
               initialVideoId: '6FTRWy_q2-k',
               flags: YoutubePlayerFlags(
@@ -122,7 +122,7 @@ class video {
         video(
             title: "Step 5: Observation and Save the data",
             subtitle: "Observing the stress strength curve and save the data",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.redAccent,
             videoController: YoutubePlayerController(
               initialVideoId: 'NRk7PDQJ_O0',
               flags: YoutubePlayerFlags(
@@ -135,7 +135,7 @@ class video {
         video(
             title: "Step 6: Finish the test",
             subtitle: "Turn off the machine and the software",
-            materialcolor: Colors.purple[400],
+            materialcolor: Colors.greenAccent,
             videoController: YoutubePlayerController(
               initialVideoId: 'hLD1NP6XWz8',
               flags: YoutubePlayerFlags(

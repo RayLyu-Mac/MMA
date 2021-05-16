@@ -73,7 +73,7 @@ class _KeyenceMMainState extends State<KeyenceMMain> {
               left: _screenWidth / 12,
               buttonName: "Instruction",
               warnNote:
-                  "Hydrofluoric Acid: Concentrated HF is extremely dangerous and differs from other acids because the fluoride ion readily penetrates the skin, causing destruction of deep tissue layers, including bone. Pain associated with.",
+                  "•Make Sure the smaples used have been properly polished and etched\n•",
               pageTo: icp_instruction(),
             ),
             functionButtonMode(

@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'cutterData.dart';
+import 'keyenceData.dart';
 import 'package:flutter/services.dart';
+import 'package:mma_mse/customTileScroll.dart';
 
-class BulkAbraCutterInstru extends StatefulWidget {
+class KeyenceMicroInstru extends StatefulWidget {
   final video videoType;
-  const BulkAbraCutterInstru({Key key, this.videoType}) : super(key: key);
+  const KeyenceMicroInstru({Key key, this.videoType}) : super(key: key);
 
   @override
-  _BulkAbraCutterInstruState createState() => _BulkAbraCutterInstruState();
+  _KeyenceMicroInstruState createState() => _KeyenceMicroInstruState();
 }
 
-class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
+class _KeyenceMicroInstruState extends State<KeyenceMicroInstru> {
   List _instructionList = List<video>();
   double _screenWidth;
   double _screenH;
+  final ScrollController controller = ScrollController();
+  List title = [
+    "Start the machine",
+    "Placing the sample into the stage",
+    "Adjust the light for the microscope",
+    "Taking simple image",
+    "Correcting a sample which is not flat",
+    "Large Image Scan",
+    "Enhancing the resolution",
+    "Glare removal",
+    "Finish the experiment"
+  ];
 
   @override
   void initState() {
@@ -35,17 +48,31 @@ class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
 
   @override
   Widget build(BuildContext context) {
+    Drawer keyenceInstruction() => Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(child: Text("Keyence Microscope")),
+              for (var j = 0; j < title.length; j++)
+                ScrollcustomListTile(
+                    name: title[j],
+                    pageTo: j - 1,
+                    fonts: 13,
+                    controller: controller)
+            ],
+          ),
+        );
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
-            "Bulk Abrasive Cutter",
+            "Keyence MicroScope Instruction",
             style:
                 TextStyle(fontSize: _screenH / 35, fontWeight: FontWeight.bold),
           ),
         ),
         body: SafeArea(
           child: ListView.builder(
+            controller: controller,
             itemExtent: 335,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
