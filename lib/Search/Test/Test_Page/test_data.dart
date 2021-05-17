@@ -19,13 +19,15 @@ class HeroType {
           title: 'Hardness Test',
           subTitle: 'Test for material mechanical property',
           pageTo: hardness_test_bg(),
-          image: 'assest/equipment/lm.jpg',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           materialColor: Colors.amber[700]))
       ..add(HeroType(
           title: 'Tensile Test',
           pageTo: tensile_test_bg(),
           subTitle: 'Find the microstructure property',
-          image: 'assest/equipment/utm.jpg',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           materialColor: Colors.green[700]));
   }
 }

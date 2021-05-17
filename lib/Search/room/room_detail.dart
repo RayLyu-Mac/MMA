@@ -50,15 +50,15 @@ class _room_detailState extends State<room_detail> {
                 top: 0.0,
                 left: 0.0,
                 width: _screenWidth,
-                height: 210.0,
+                height: _screenH / 2.6,
                 child: Hero(
                     tag: 'image' + _heroType.title,
-                    child: Image.asset(
+                    child: Image.network(
                       _heroType.image,
                       fit: BoxFit.fitWidth,
                     ))),
             Positioned(
-                top: 230.0,
+                top: 270.0,
                 left: 25,
                 width: _screenWidth - 64.0,
                 child: Hero(

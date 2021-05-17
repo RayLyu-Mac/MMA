@@ -5,6 +5,7 @@ import "package:mma_mse/equipment/BulkAbrasive/BulkAbrasiveMain.dart";
 import 'package:mma_mse/equipment/Automatic Micro Hardness Tester/AMHMain.dart';
 import 'package:mma_mse/equipment/CharpyImpact/Charpy.dart';
 import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
+import 'package:mma_mse/equipment/Rockwell.dart';
 
 class HeroType {
   String title;
@@ -37,6 +38,7 @@ class HeroType {
       ..add(HeroType(
           title: 'Rockwell Hardness Machine',
           subTitle: 'Test for material hardness',
+          pageTo: hardness_test(),
           fText:
               'Device Needed: Rockwell machine.\n \nMaterial property can be tested: hardness ',
           image:

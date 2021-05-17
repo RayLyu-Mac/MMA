@@ -78,7 +78,7 @@ class _direction_mainState extends State<direction_main> {
                   child: Text(
                     "Biomaterial",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: _screenH / 30,
                         fontWeight: FontWeight.bold),
                   ),
@@ -89,8 +89,8 @@ class _direction_mainState extends State<direction_main> {
                             offset: const Offset(4, 4), color: Colors.blue[100])
                       ],
                       image: DecorationImage(
-                          image:
-                              AssetImage("assest/search/direction/biomat.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/direction/biomat.jpg?raw=true"),
                           fit: BoxFit.cover)),
                 ),
               ),
@@ -127,7 +127,8 @@ class _direction_mainState extends State<direction_main> {
                             offset: const Offset(4, 4), color: Colors.blue[100])
                       ],
                       image: DecorationImage(
-                          image: AssetImage("assest/search/direction/data.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/direction/data.jpg?raw=true"),
                           fit: BoxFit.cover)),
                 ),
               ),
@@ -160,7 +161,7 @@ class _direction_mainState extends State<direction_main> {
                   child: Text(
                     "Smart Material",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: _screenH / 30,
                         fontWeight: FontWeight.bold),
                   ),
@@ -171,8 +172,8 @@ class _direction_mainState extends State<direction_main> {
                             offset: const Offset(4, 4), color: Colors.blue[100])
                       ],
                       image: DecorationImage(
-                          image:
-                              AssetImage("assest/search/direction/smart.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/direction/smart.jpg?raw=true"),
                           fit: BoxFit.cover)),
                 ),
               ),
@@ -209,7 +210,8 @@ class _direction_mainState extends State<direction_main> {
                             offset: const Offset(4, 4), color: Colors.blue[100])
                       ],
                       image: DecorationImage(
-                          image: AssetImage("assest/search/direction/emaf.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/direction/emaf.jpg?raw=true"),
                           fit: BoxFit.cover)),
                 ),
               ),
