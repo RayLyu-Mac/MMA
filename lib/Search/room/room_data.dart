@@ -25,7 +25,8 @@ class HeroType {
           subTitle: 'Room For Study and Group Work',
           fText:
               'Location: JHE 2nd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card',
-          image: 'assest/equipment/lm.jpg',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           forw: green_Room(),
           materialColor: Colors.green[700]))
       ..add(HeroType(
@@ -33,7 +34,8 @@ class HeroType {
           subTitle: 'Room For Study and Group Work',
           fText:
               'Location: JHE 3rd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card',
-          image: 'assest/equipment/lm.jpg',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           forw: green_Room(),
           materialColor: Colors.amber[700]));
   }

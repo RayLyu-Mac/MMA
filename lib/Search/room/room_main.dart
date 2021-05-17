@@ -38,7 +38,7 @@ class _room_mainState extends State<room_main> {
       ),
       body: SafeArea(
           child: ListView.builder(
-              itemExtent: 180.0,
+              itemExtent: 265,
               itemCount: _heroTypeList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
@@ -61,12 +61,15 @@ class _room_mainState extends State<room_main> {
                           right: 0.0,
                           child: Hero(
                             tag: 'image' + _heroTypeList[index].title,
-                            child: Image.asset(_heroTypeList[index].image,
-                                fit: BoxFit.fitWidth, height: 90.0),
+                            child: Image.network(
+                              _heroTypeList[index].image,
+                              fit: BoxFit.fitWidth,
+                              height: 180,
+                            ),
                           ),
                         ),
                         Positioned(
-                          top: 92.0,
+                          top: 185,
                           left: 32.0,
                           width: _screenWidthAdjustment,
                           child: Hero(
@@ -83,7 +86,7 @@ class _room_mainState extends State<room_main> {
                               )),
                         ),
                         Positioned(
-                            top: 125.0,
+                            top: 213,
                             left: 32.0,
                             width: _screenWidthAdjustment,
                             child: Hero(

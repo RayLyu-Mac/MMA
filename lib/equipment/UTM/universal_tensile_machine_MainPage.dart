@@ -64,7 +64,8 @@ class _tensile_testState extends State<tensile_test> {
                         width: _screenWidth / 2.5, height: _screenH / 2),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assest/equipment/utm.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/utm.jpg?raw=true"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(10),
                     )),

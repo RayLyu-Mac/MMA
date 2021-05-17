@@ -51,7 +51,7 @@ class _equb_mainState extends State<equb_main> {
       body: SafeArea(
           child: ListView.builder(
               controller: controller,
-              itemExtent: 255.0,
+              itemExtent: 265.0,
               itemCount: _heroTypeList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
@@ -75,13 +75,16 @@ class _equb_mainState extends State<equb_main> {
                           right: 0.0,
                           child: Hero(
                             tag: 'image' + _heroTypeList[index].title,
-                            child: Image.asset(_heroTypeList[index].image,
-                                fit: BoxFit.fitWidth, height: 170.0),
+                            child: Image.network(
+                              _heroTypeList[index].image,
+                              fit: BoxFit.fitWidth,
+                              height: 180,
+                            ),
                           ),
                         ),
                         Positioned(
-                          top: 175.0,
-                          left: 20.0,
+                          top: 185.0,
+                          left: 18.0,
                           width: _screenWidthAdjustment,
                           child: Hero(
                               tag: 'text' + _heroTypeList[index].title,
@@ -97,8 +100,8 @@ class _equb_mainState extends State<equb_main> {
                               )),
                         ),
                         Positioned(
-                            top: 203.0,
-                            left: 20.0,
+                            top: 213.0,
+                            left: 18.0,
                             width: _screenWidthAdjustment,
                             child: Hero(
                                 tag: 'subtitle' + _heroTypeList[index].title,

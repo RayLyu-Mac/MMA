@@ -57,7 +57,7 @@ class _equb_avaState extends State<equb_ava> {
                 height: _screenH / 2.3,
                 child: Hero(
                     tag: 'image' + _heroType.title,
-                    child: Image.asset(
+                    child: Image.network(
                       _heroType.image,
                       fit: BoxFit.fitWidth,
                     ))),

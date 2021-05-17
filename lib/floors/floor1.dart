@@ -121,7 +121,8 @@ class _floor1State extends State<floor1> {
               width: _screenWidth / 1.2, height: _screenH / 1.4),
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assest/floors/floor1/floor1.png"),
+                  image: NetworkImage(
+                      "https://github.com/RayLyu-Mac/MMA/blob/master/assest/floors/floor1/floor1.PNG?raw=true"),
                   fit: BoxFit.cover)),
           child: Row(
             children: [

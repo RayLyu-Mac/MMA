@@ -62,7 +62,8 @@ class _charpy_testState extends State<charpy_test> {
                         width: _screenWidth / 2.5, height: _screenH / 2),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assest/equipment/cit.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/cit.jpg?raw=true"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(10),
                     )),

@@ -56,24 +56,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-   - assest/welcome/book.png
-   - assest/welcome/micro.png
-   - assest/welcome/tool.png
    - assest/welcome/motto.png
    - assest/layout/layout.png
    - assest/layout/sci.png
-   - assest/floors/floor1/floor1.png
    - assest/floors/floor1/Mech.png
    - assest/floors/floor1/g.png
    - assest/floors/floor1/w.jpg
    - assest/search/e.png
    - assest/search/T.jpg
    - assest/search/s.png
-   - assest/equipment/lm.jpg
-   - assest/equipment/rwt.jpg
-   - assest/equipment/utm.jpg
-   - assest/equipment/mht.jpg
-   - assest/equipment/cit.png
    - assest/equipment/theory/HT.png
    - assest/test/hdtbg1.jpg
    - assest/test/ttbg1.jpg
@@ -85,7 +76,6 @@ flutter:
    - assest/search/direction/data.jpg
    - assest/search/direction/smart.jpg
    - assest/search/direction/emaf.jpg
-   - assest/equipment/icp.jpg
    - assest/equipment/theory/icpBlankCali.png
    - assest/equipment/theory/icpNaturaI.png
    - assest/equipment/theory/icpCarry.png
@@ -96,11 +86,6 @@ flutter:
    - assest/equipment/theory/automatic_cutter/54met.jpg
    - assest/equipment/theory/automatic_cutter/cw12.jpg
    - assest/equipment/theory/automatic_cutter/posserabracut.png
-   - assest/equipment/abc.jpg
-   - assest/equipment/amh.jpg
-   - assest/equipment/cit.jpg
-   - assest/equipment/mts.jpg
-   - assest/equipment/kms.jpg
    - assest/equipment/polisher.jpg
    
   # To add assets to your application, add an assets section, like this:

@@ -97,7 +97,8 @@ class _welcomeState extends State<welcome> {
                     width: _screenWidth / 3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assest/welcome/book.png"),
+                            image: NetworkImage(
+                                "https://github.com/RayLyu-Mac/MMA/blob/master/assest/welcome/book.PNG?raw=true"),
                             fit: BoxFit.cover)),
                   ),
                   onTap: () {
@@ -117,7 +118,8 @@ class _welcomeState extends State<welcome> {
                   width: _screenWidth / 4,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assest/welcome/micro.png"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/welcome/micro.PNG?raw=true"),
                           fit: BoxFit.cover)),
                 ),
                 onTap: () {
@@ -138,7 +140,8 @@ class _welcomeState extends State<welcome> {
                     width: _screenWidth / 3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assest/welcome/tool.png"),
+                            image: NetworkImage(
+                                "https://github.com/RayLyu-Mac/MMA/blob/master/assest/welcome/tool.PNG?raw=true"),
                             fit: BoxFit.cover)),
                   ),
                   onTap: () {
