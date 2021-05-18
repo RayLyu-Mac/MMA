@@ -40,6 +40,7 @@ dependencies:
   flutter_email_sender: ^5.0.0
   font_awesome_flutter: ^9.0.0
   image_picker: ^0.7.5
+  syncfusion_flutter_pdfviewer: ^19.1.63-beta
 
 dev_dependencies:
   flutter_test:
@@ -72,15 +73,6 @@ flutter:
    - assest/equipment/theory/fdc.png
    - assest/search/dir.jpg
    - assest/search/rsh.jpg
-   - assest/equipment/theory/icpBlankCali.png
-   - assest/equipment/theory/icpNaturaI.png
-   - assest/equipment/theory/icpCarry.png
-   - assest/equipment/theory/automatic_cutter/10s30.jpg
-   - assest/equipment/theory/automatic_cutter/51met.jpg
-   - assest/equipment/theory/automatic_cutter/52met.jpg
-   - assest/equipment/theory/automatic_cutter/53met.jpg
-   - assest/equipment/theory/automatic_cutter/54met.jpg
-   - assest/equipment/theory/automatic_cutter/cw12.jpg
    - assest/equipment/theory/automatic_cutter/posserabracut.png
    - assest/equipment/polisher.jpg
    

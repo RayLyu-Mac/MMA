@@ -28,37 +28,43 @@ final List<Widget> pages = [
     doucment: data,
     back_img: back_img,
     title: "CW12-50",
-    addOnImg: "assest/equipment/theory/automatic_cutter/cw12.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/cw12.jpg?raw=true",
   ),
   pageMode(
     doucment: data,
     back_img: back_img,
     title: "51-MET",
-    addOnImg: "assest/equipment/theory/automatic_cutter/51met.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/51met.jpg?raw=true",
   ),
   pageMode(
     doucment: data,
     back_img: back_img,
     title: "52-MET",
-    addOnImg: "assest/equipment/theory/automatic_cutter/52met.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/52met.jpg?raw=true",
   ),
   pageMode(
     doucment: data,
     back_img: back_img,
     title: "53-MET",
-    addOnImg: "assest/equipment/theory/automatic_cutter/53met.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/53met.jpg?raw=true",
   ),
   pageMode(
     doucment: data,
     back_img: back_img,
     title: "54-MET",
-    addOnImg: "assest/equipment/theory/automatic_cutter/54met.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/54met.jpg?raw=true",
   ),
   pageMode(
     doucment: data,
     back_img: back_img,
     title: "10S30",
-    addOnImg: "assest/equipment/theory/automatic_cutter/10s30.jpg",
+    addOnImg:
+        "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/automatic_cutter/10s30.jpg?raw=true",
   ),
   PossErBulkAbraCut()
 ];

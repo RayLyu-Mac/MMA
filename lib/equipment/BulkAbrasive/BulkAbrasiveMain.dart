@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:mma_mse/user_note.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mma_mse/equipment/functionButtonMode.dart';
-import 'package:mma_mse/Instruction/icp_instruction/icpMain.dart';
 import 'BulkAbrasiveDashB.dart';
 import 'backG.dart';
 import 'package:mma_mse/Instruction/abrasive_cutter/cutterMain.dart';
-import 'package:mma_mse/LogInRequest/logInRequest.dart';
+import 'package:mma_mse/SendEmail/sendEmailMain.dart';
 
 class BulkAbrasive_Main extends StatefulWidget {
-  BulkAbrasive_Main({Key key}) : super(key: key);
+  final String location;
+  final String emailTo;
+  BulkAbrasive_Main(
+      {Key key,
+      @optionalTypeArgs this.location,
+      @optionalTypeArgs this.emailTo})
+      : super(key: key);
 
   @override
   _BulkAbrasive_MainState createState() => _BulkAbrasive_MainState();
@@ -95,7 +100,14 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
                 top: _screenH / 1.56,
                 left: _screenWidth / 2 + 16,
                 buttonName: "Dash Board Buttons",
-                pageTo: automaticModeInterFaceButton()),
+                pageTo: EmailContent(
+                    locationOfEqup: widget.location != null
+                        ? widget.location
+                        : "Not Specificed",
+                    nameOfEqup: "Charpy Impact Tester",
+                    emailTo: widget.emailTo != null
+                        ? widget.emailTo
+                        : "Please enter the email address!")),
             Positioned(
                 top: _screenH / 1.33,
                 left: _screenWidth / 1.3,

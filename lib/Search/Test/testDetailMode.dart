@@ -90,8 +90,8 @@ class _pageModeState extends State<pageMode> {
               ])),
         ),
         Positioned(
-            top: _screenH / 1.55,
-            left: _screenWidth / 4,
+            top: _screenH / 1.6,
+            left: _screenWidth / 5.5,
             child: imgAddOn(
               screenH: _screenH,
               screenW: _screenWidth,
@@ -117,13 +117,13 @@ class imgAddOn extends StatelessWidget {
   Widget build(BuildContext context) {
     if (img != null) {
       return Container(
-          constraints:
-              BoxConstraints.expand(width: screenW / 2, height: screenH / 6),
+          constraints: BoxConstraints.expand(
+              width: screenW / 1.5, height: screenH / 4.3),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(5),
               color: Colors.black,
-              image:
-                  DecorationImage(image: AssetImage(img), fit: BoxFit.cover)));
+              image: DecorationImage(
+                  image: NetworkImage(img), fit: BoxFit.cover)));
     } else {
       return SizedBox(
         height: 0,

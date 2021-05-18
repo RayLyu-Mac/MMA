@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mma_mse/Instruction/CharpyImpact/charpyImpactMain.dart';
+import 'package:mma_mse/SendEmail/sendEmailMain.dart';
 import 'package:mma_mse/user_note.dart';
 import '../functionButtonMode.dart';
 import 'package:mma_mse/Search/Test/TestsDetailes/tensile_test_bg.dart';
 import 'charpyImpactBackG.dart';
 
 class charpy_test extends StatefulWidget {
-  charpy_test({Key key}) : super(key: key);
+  final String location;
+  final String emailTo;
+  charpy_test(
+      {Key key,
+      @optionalTypeArgs this.location,
+      @optionalTypeArgs this.emailTo})
+      : super(key: key);
 
   @override
   _charpy_testState createState() => _charpy_testState();
@@ -92,7 +99,14 @@ class _charpy_testState extends State<charpy_test> {
               top: _screenH / 1.56,
               left: _screenWidth / 2 + 16,
               buttonName: "Manager",
-              pageTo: tensile_test_bg(),
+              pageTo: EmailContent(
+                  locationOfEqup: widget.location != null
+                      ? widget.location
+                      : "Not Specificed",
+                  nameOfEqup: "Charpy Impact Tester",
+                  emailTo: widget.emailTo != null
+                      ? widget.emailTo
+                      : "Please enter the email address!"),
             ),
             Positioned(
                 top: _screenH / 1.33,

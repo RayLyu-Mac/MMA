@@ -27,49 +27,53 @@ Map<String, String> document = {
   "Reason two: Carry Over or Memory Effect":
       "•Spray Chamber can be contaiminated by the previous analysis \n•Look at the intenstiy and if the peaks are dropping this shows that the contaimination is being flushed out\n•Take note of the intensity and repeat with the blank"
 };
+String backImg = "assest/test/hdtbg1.jpg";
 List<Widget> pages = [
   pageMode(
       doucment: document,
       docNumber: "Sample Introduction System",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Sample Introduction System"),
   pageMode(
       doucment: document,
       docNumber: "Excitation Source",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Excitation Source"),
   pageMode(
       doucment: document,
       docNumber: "Spectrometer",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Spectrometer"),
   pageMode(
       doucment: document,
       docNumber: "Detection System",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Detection System"),
   pageMode(
       doucment: document,
       docNumber: "Data Acquisition and Processing",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Data Acquisition and Processing"),
   pageMode(
       doucment: document,
-      addOnImg: "assest/equipment/theory/icpBlankCali.png",
+      addOnImg:
+          "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/icpBlankCali.png?raw=true",
       docNumber: "Blank Result Expected",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Blank Result Expected"),
   pageMode(
       doucment: document,
       docNumber: "Reason one: Natural Interference",
-      addOnImg: "assest/equipment/theory/icpNaturaI.png",
-      back_img: "assest/test/hdtbg1.jpg",
+      addOnImg:
+          "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/icpNaturaI.png?raw=true",
+      back_img: backImg,
       title: "Reason one: Natural Interference"),
   pageMode(
       doucment: document,
-      addOnImg: "assest/equipment/theory/icpCarry.png",
+      addOnImg:
+          "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/theory/icpCarry.png?raw=true",
       docNumber: "Reason two: Carry Over or Memory Effect",
-      back_img: "assest/test/hdtbg1.jpg",
+      back_img: backImg,
       title: "Reason two: Carry Over or Memory Effect"),
 ];
 

@@ -19,7 +19,6 @@ Map<String, String> data = {
 };
 final String back_img = "assest/test/hdtbg1.jpg";
 final List<Widget> pages = [
-  DrawerHeader(child: Text("Background Theory For Charpy Impact Test")),
   pageMode(
     doucment: data,
     back_img: back_img,
@@ -44,6 +43,7 @@ class _CharpyBackGState extends State<CharpyBackG> {
     Drawer cutter_bg() => Drawer(
             child: ListView(
           children: [
+            DrawerHeader(child: Text("Background Theory for Charpy Impact")),
             customListTile(
                 controller: controller,
                 name: "Tests Standard",
