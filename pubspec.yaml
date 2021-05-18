@@ -30,12 +30,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   path_provider: ^2.0.1
   intl: ^0.17.0
-  syncfusion_flutter_calendar: ^18.4.46
   youtube_player_flutter: ^7.0.0+7
   page_transition: "^1.1.7+6"
   qr_flutter: ^3.2.0
   barcode_scan_fix: ^1.0.2
-  url_launcher: ^5.4.2
+  url_launcher: ^6.0.0-nullsafety
   http: ^0.13.3
   flutter_email_sender: ^5.0.0
   font_awesome_flutter: ^9.0.0
