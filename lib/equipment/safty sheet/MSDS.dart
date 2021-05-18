@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MSDSdata.dart';
+import 'package:mma_mse/customTile.dart';
 
 class SearchListExample extends StatefulWidget {
   @override
@@ -25,6 +26,8 @@ class _SearchListExampleState extends State<SearchListExample> {
   String _searchText = "";
   List total = new List();
   List name = new List();
+  List<msdsData> property = List();
+  final ScrollController controller = ScrollController();
 
   _SearchListExampleState() {
     _controller.addListener(() {
@@ -52,123 +55,177 @@ class _SearchListExampleState extends State<SearchListExample> {
     }
   }
 
+  double _screenWidth;
+  double _screenH;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _screenWidth = MediaQuery.of(context).size.width;
+    _screenH = MediaQuery.of(context).size.height;
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         key: globalKey,
         appBar: buildAppBar(context),
-        body: new Container(
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              new Flexible(
-                  child: name.length != 0 || _controller.text.isNotEmpty
-                      ? new ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: name.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            String listData = name[index];
-                            return new ListTile(
-                              title: new Text(listData.toString()),
-                            );
-                          },
-                        )
-                      : new ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: _list.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            String listData = _list[index];
-                            return new ListTile(
-                              title: new Text(listData.toString()),
-                            );
-                          },
-                        ))
-            ],
-          ),
-        ));
+        body: SafeArea(
+            child: PrimaryScrollController(
+                controller: controller,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: name.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    String listData = name[index];
+                    return new Padding(
+                        padding: EdgeInsets.fromLTRB(8, 2, 8, 2),
+                        child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border:
+                                    Border.all(color: Colors.grey, width: 4)),
+                            child: InkWell(
+                              splashColor: Colors.grey,
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return SimpleDialog(
+                                        backgroundColor: property[index]
+                                            .level
+                                            .withOpacity(0.8),
+                                        contentPadding: EdgeInsets.fromLTRB(
+                                            _screenWidth / 30,
+                                            _screenH / 30,
+                                            _screenWidth / 50,
+                                            _screenH / 25),
+                                        title: Text(property[index].name),
+                                        children: [
+                                          Text(
+                                              "The Location of the material: " +
+                                                  property[index].location),
+                                          Text(
+                                              "The Chemical Formula the material: " +
+                                                  property[index].short),
+                                          Text("The type of the material: " +
+                                              property[index].type),
+                                        ],
+                                      );
+                                    });
+                              },
+                              child: ListTile(
+                                title: new Text(listData.toString()),
+                                tileColor: property[index].level,
+                              ),
+                            )));
+                  },
+                ))));
   }
 
   Widget buildAppBar(BuildContext context) {
-    String dropdownValue = "Search Name";
-    return new AppBar(centerTitle: true, title: appBarTitle, actions: <Widget>[
-      new IconButton(
-        icon: icon,
-        onPressed: () {
-          setState(() {
-            if (this.icon.icon == Icons.search) {
-              this.icon = new Icon(
-                Icons.close,
-                color: Colors.white,
-              );
-              this.appBarTitle = new TextField(
+    String dropdownValue = "Name";
+    return new AppBar(
+        toolbarHeight: 80,
+        centerTitle: true,
+        title: Column(
+          children: [
+            Text("MSDS Data Sheet"),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 40,
+              width: 240,
+              child: TextField(
+                expands: true,
+                maxLines: null,
                 controller: _controller,
                 style: new TextStyle(
-                  color: Colors.white,
+                  fontSize: _screenH / 35,
+                  color: Colors.black,
                 ),
                 decoration: new InputDecoration(
-                    prefixIcon: new Icon(Icons.search, color: Colors.white),
+                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(width: 3.0, color: Colors.black)),
                     hintText: "Search...",
                     hintStyle: new TextStyle(color: Colors.white)),
                 onChanged: searchOperation,
-              );
-              _handleSearchStart();
-            } else {
-              _handleSearchEnd();
-            }
-          });
-        },
-      ),
-      DropdownButton(
-        icon: const Icon(Icons.arrow_downward),
-        iconSize: 24,
-        elevation: 16,
-        value: dropdownValue,
-        style: const TextStyle(color: Colors.deepPurple),
-        underline: Container(
-          height: 2,
-          color: Colors.deepPurpleAccent,
+              ),
+            )
+          ],
         ),
-        onChanged: (value) {
-          setState(() {
-            dropdownValue = value;
-            switch (value) {
-              case "Search Name":
-                searchName = true;
-                _list.clear();
-                for (var i = 0; i < total.length; i++) {
-                  _list.add(total[i].name);
+        actions: <Widget>[
+          IconButton(
+            icon: icon,
+            onPressed: () {
+              setState(() {
+                if (this.icon.icon == Icons.search) {
+                  this.icon = new Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  );
+
+                  _handleSearchStart();
+                } else {
+                  _handleSearchEnd();
                 }
-                break;
-              case "Search Location":
-                searchLoc = true;
-                _list.clear();
-                for (var i = 0; i < total.length; i++) {
-                  _list.add(total[i].location);
-                }
-                break;
-              case "Search Chemical Formula":
-                searchChem = true;
-                _list.clear();
-                for (var i = 0; i < total.length; i++) {
-                  _list.add(total[i].short);
-                }
-                break;
-            }
-          });
-        },
-        items: <String>[
-          "Search Name",
-          "Search Location",
-          "Search Chemical Formula"
-        ].map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-      )
-    ]);
+              });
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 30,
+            width: 50,
+            child: DropdownButton(
+              isExpanded: true,
+              icon: const Icon(Icons.arrow_downward),
+              iconSize: 25,
+              elevation: 16,
+              value: dropdownValue,
+              style: const TextStyle(color: Colors.deepPurple),
+              onChanged: (value) {
+                setState(() {
+                  dropdownValue = value;
+                  switch (value) {
+                    case "Name":
+                      searchName = true;
+                      _list.clear();
+                      for (var i = 0; i < total.length; i++) {
+                        _list.add(total[i].name);
+                      }
+                      break;
+                    case "Location":
+                      searchLoc = true;
+                      _list.clear();
+                      for (var i = 0; i < total.length; i++) {
+                        _list.add(total[i].location);
+                      }
+                      break;
+                    case "Chemical Formula":
+                      searchChem = true;
+                      _list.clear();
+                      for (var i = 0; i < total.length; i++) {
+                        _list.add(total[i].short);
+                      }
+                      break;
+                  }
+                });
+              },
+              items: <String>["Name", "Location", "Chemical Formula"]
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          )
+        ]);
   }
 
   void _handleSearchStart() {
@@ -183,10 +240,6 @@ class _SearchListExampleState extends State<SearchListExample> {
         Icons.search,
         color: Colors.white,
       );
-      this.appBarTitle = new Text(
-        "Search Sample",
-        style: new TextStyle(color: Colors.white),
-      );
       _isSearching = false;
       _controller.clear();
     });
@@ -194,11 +247,13 @@ class _SearchListExampleState extends State<SearchListExample> {
 
   void searchOperation(String searchText) {
     name.clear();
+    property.clear();
     if (_isSearching != null) {
       for (int j = 0; j < _list.length; j++) {
         String data = _list[j];
         if (data.toLowerCase().contains(searchText.toLowerCase())) {
           name.add(data);
+          property.add(total[j]);
         }
       }
     }

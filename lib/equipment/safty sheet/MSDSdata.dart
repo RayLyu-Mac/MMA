@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+Color green = Colors.green[400];
+Color yellow = Colors.yellow[400];
+Color blue = Colors.blue[400];
+Color grey = Colors.grey[400];
+Color red = Colors.red[400];
+
 class msdsData {
   String location;
   String name;
@@ -15,31 +21,31 @@ class msdsData {
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Alumina",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "Al2O3"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Aluminum Ammonium Sulphate",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "AlH4NO8S2"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Aluminum Hydroxide",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "Al(OH)3"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Alumina",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "Al2O3"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Aluminum Nitrate",
-          level: Colors.yellow,
+          level: yellow,
           type: "Solid",
           short: "Al(NO3)3"))
       ..add(msdsData(
@@ -51,49 +57,49 @@ class msdsData {
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Aluminum Potassium Sulfate",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "KAl(SO4)2"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Chloride",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "NH4Cl"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Copper Chloride",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "CuCl2•2NH4Cl.2H2O"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Ferrous",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "(NH4)2Fe(SO4)2(H2O)6"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Hydroxide",
-          level: Colors.grey,
+          level: grey,
           type: "Solid",
           short: "NH4OH"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Molybdate",
-          level: Colors.green,
+          level: green,
           type: "Solid",
           short: "(NH4)6Mo7O24"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Ammonium Sulphate",
-          level: Colors.blue,
+          level: blue,
           type: "Solid",
           short: "(NH4)2SO4"))
       ..add(msdsData(
           location: "JHE-240 /246/A",
           name: "Iodine",
-          level: Colors.red,
+          level: red,
           type: "Solid",
           short: "I"));
   }
