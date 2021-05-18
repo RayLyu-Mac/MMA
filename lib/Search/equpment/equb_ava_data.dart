@@ -7,6 +7,7 @@ import 'package:mma_mse/equipment/CharpyImpact/Charpy.dart';
 import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
 import 'package:mma_mse/equipment/Rockwell.dart';
 import 'package:mma_mse/equipment/HighTempFurnace/sop.dart';
+import 'package:mma_mse/equipment/safty sheet/MSDS.dart';
 
 class HeroType {
   String title;
@@ -93,7 +94,7 @@ class HeroType {
           fText: 'Avaiable on JHE 244',
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/hscf.jpg?raw=true',
-          pageTo: StandardOperaHighTFurnace(),
+          pageTo: SearchListExample(),
           materialColor: Colors.blueAccent));
   }
 }

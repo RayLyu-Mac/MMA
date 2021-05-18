@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(new MaterialApp(
-      home: new SearchListExample(),
-    ));
+import 'MSDSdata.dart';
 
 class SearchListExample extends StatefulWidget {
   @override
@@ -20,10 +17,14 @@ class _SearchListExampleState extends State<SearchListExample> {
   );
   final globalKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
-  List<dynamic> _list;
+  List _list = List();
   bool _isSearching;
+  bool searchChem = false;
+  bool searchLoc = false;
+  bool searchName = false;
   String _searchText = "";
-  List searchresult = new List();
+  List total = new List();
+  List name = new List();
 
   _SearchListExampleState() {
     _controller.addListener(() {
@@ -45,19 +46,10 @@ class _SearchListExampleState extends State<SearchListExample> {
   void initState() {
     super.initState();
     _isSearching = false;
-    values();
-  }
-
-  void values() {
-    _list = List();
-    _list.add("Indian rupee");
-    _list.add("United States dollar");
-    _list.add("Australian dollar");
-    _list.add("Euro");
-    _list.add("British pound");
-    _list.add("Yemeni rial");
-    _list.add("Japanese yen");
-    _list.add("Hong Kong dollar");
+    total = msdsData().msDataList();
+    for (var i = 0; i < total.length; i++) {
+      _list.add(total[i].name);
+    }
   }
 
   @override
@@ -71,12 +63,12 @@ class _SearchListExampleState extends State<SearchListExample> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               new Flexible(
-                  child: searchresult.length != 0 || _controller.text.isNotEmpty
+                  child: name.length != 0 || _controller.text.isNotEmpty
                       ? new ListView.builder(
                           shrinkWrap: true,
-                          itemCount: searchresult.length,
+                          itemCount: name.length,
                           itemBuilder: (BuildContext context, int index) {
-                            String listData = searchresult[index];
+                            String listData = name[index];
                             return new ListTile(
                               title: new Text(listData.toString()),
                             );
@@ -98,6 +90,7 @@ class _SearchListExampleState extends State<SearchListExample> {
   }
 
   Widget buildAppBar(BuildContext context) {
+    String dropdownValue = "Search Name";
     return new AppBar(centerTitle: true, title: appBarTitle, actions: <Widget>[
       new IconButton(
         icon: icon,
@@ -126,6 +119,55 @@ class _SearchListExampleState extends State<SearchListExample> {
           });
         },
       ),
+      DropdownButton(
+        icon: const Icon(Icons.arrow_downward),
+        iconSize: 24,
+        elevation: 16,
+        value: dropdownValue,
+        style: const TextStyle(color: Colors.deepPurple),
+        underline: Container(
+          height: 2,
+          color: Colors.deepPurpleAccent,
+        ),
+        onChanged: (value) {
+          setState(() {
+            dropdownValue = value;
+            switch (value) {
+              case "Search Name":
+                searchName = true;
+                _list.clear();
+                for (var i = 0; i < total.length; i++) {
+                  _list.add(total[i].name);
+                }
+                break;
+              case "Search Location":
+                searchLoc = true;
+                _list.clear();
+                for (var i = 0; i < total.length; i++) {
+                  _list.add(total[i].location);
+                }
+                break;
+              case "Search Chemical Formula":
+                searchChem = true;
+                _list.clear();
+                for (var i = 0; i < total.length; i++) {
+                  _list.add(total[i].short);
+                }
+                break;
+            }
+          });
+        },
+        items: <String>[
+          "Search Name",
+          "Search Location",
+          "Search Chemical Formula"
+        ].map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      )
     ]);
   }
 
@@ -151,12 +193,12 @@ class _SearchListExampleState extends State<SearchListExample> {
   }
 
   void searchOperation(String searchText) {
-    searchresult.clear();
+    name.clear();
     if (_isSearching != null) {
-      for (int i = 0; i < _list.length; i++) {
-        String data = _list[i];
+      for (int j = 0; j < _list.length; j++) {
+        String data = _list[j];
         if (data.toLowerCase().contains(searchText.toLowerCase())) {
-          searchresult.add(data);
+          name.add(data);
         }
       }
     }
