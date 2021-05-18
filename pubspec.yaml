@@ -39,6 +39,7 @@ dependencies:
   flutter_email_sender: ^5.0.0
   font_awesome_flutter: ^9.0.0
   image_picker: ^0.7.5
+  syncfusion_flutter_pdf: ^19.1.63-beta
   syncfusion_flutter_pdfviewer: ^19.1.63-beta
 
 dev_dependencies:

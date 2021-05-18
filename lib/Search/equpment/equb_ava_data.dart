@@ -6,6 +6,7 @@ import 'package:mma_mse/equipment/Automatic Micro Hardness Tester/AMHMain.dart';
 import 'package:mma_mse/equipment/CharpyImpact/Charpy.dart';
 import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
 import 'package:mma_mse/equipment/Rockwell.dart';
+import 'package:mma_mse/equipment/HighTempFurnace/sop.dart';
 
 class HeroType {
   String title;
@@ -84,6 +85,15 @@ class HeroType {
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/kms.jpg?raw=true',
           pageTo: KeyenceMMain(),
+          materialColor: Colors.blueAccent))
+      ..add(HeroType(
+          title: 'Silicon Carbide Furnace',
+          subTitle:
+              'The High temperature silicon carbide furnace is used when the user needs a temperature higher than 950°C. ',
+          fText: 'Avaiable on JHE 244',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/hscf.jpg?raw=true',
+          pageTo: StandardOperaHighTFurnace(),
           materialColor: Colors.blueAccent));
   }
 }
