@@ -24,7 +24,7 @@ class HeroType {
           title: 'Green Room',
           subTitle: 'Room For Study and Group Work',
           fText:
-              'Location: JHE 2nd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card',
+              'Location: JHE 2nd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card\n \n"Events that will happen here: \nMatls 2X03 Review session"',
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           forw: green_Room(),
@@ -33,7 +33,7 @@ class HeroType {
           title: 'Orange Room',
           subTitle: 'Room For Study and Group Work',
           fText:
-              'Location: JHE 3rd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card',
+              'Location: JHE 3rd Floor \n \nAvaiable Seat: 10 \n \nNeed Acess Card \n \n"Events that will happen here: \nMatls 2X03 Review session"',
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/s.png?raw=true',
           forw: green_Room(),
