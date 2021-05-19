@@ -79,7 +79,8 @@ class _biomat_mainState extends State<biomat_main> {
                       height: _screenH,
                       width: _screenWidth,
                       alignment: Alignment.center,
-                      image: AssetImage("assest/search/direction/biomat.jpg"),
+                      image: NetworkImage(
+                          "https://github.com/RayLyu-Mac/MMA/blob/master/assest/search/direction/biomat.jpg?raw=true"),
                     ),
                   )),
               Positioned(

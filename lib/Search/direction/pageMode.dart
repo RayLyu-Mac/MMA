@@ -41,7 +41,7 @@ class _bio_mat_modelState extends State<bio_mat_model> {
                 height: _screenH,
                 width: _screenWidth,
                 alignment: Alignment.center,
-                image: AssetImage(widget.back_img),
+                image: NetworkImage(widget.back_img),
               ),
             )),
         Positioned(

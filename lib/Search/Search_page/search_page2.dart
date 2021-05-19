@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mma_mse/Search/equpment/equb_ava_main.dart';
-
+import 'package:mma_mse/Search/tools/toolsMain.dart';
 import 'package:mma_mse/Search/direction/dir_main.dart';
 
 class search_p2 extends StatefulWidget {
@@ -65,31 +65,30 @@ class _search_p2State extends State<search_p2> {
               ),
             ),
             Positioned(
+              top: _screenH / 2.75 + 50,
+              left: _screenWidth / 2 + 30,
+              child: Text(
+                "Useful Tools",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Positioned(
               top: _screenH / 2.75,
               left: 20,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => direction_main()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => toolMain()));
                 },
                 child: Container(
                   constraints: BoxConstraints.expand(
                       width: _screenWidth / 3 + 60, height: _screenH / 4 - 45),
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assest/search/rsh.jpg"),
+                          image: NetworkImage(
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/tool.jpg?raw=true"),
                           fit: BoxFit.cover)),
                 ),
-              ),
-            ),
-            Positioned(
-              top: _screenH / 2.75 + 50,
-              left: _screenWidth / 2 + 30,
-              child: Text(
-                "Research Project \nIn MSE Department",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
           ],
