@@ -9,6 +9,8 @@ import 'package:mma_mse/equipment/Rockwell.dart';
 import 'package:mma_mse/equipment/HighTempFurnace/sop.dart';
 import 'package:mma_mse/equipment/safty sheet/MSDS.dart';
 import 'package:mma_mse/equipment/autoPolisher/autoPolisherMain.dart';
+import 'package:mma_mse/equipment/Nikon Microscope/NikonMicroMain.dart';
+import 'package:mma_mse/equipment/blueFurnace/blurFMain.dart';
 
 class HeroType {
   String title;
@@ -105,6 +107,24 @@ class HeroType {
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/ap.jpg?raw=true',
           pageTo: AutoPolisherMain(),
+          materialColor: Colors.blueAccent))
+      ..add(HeroType(
+          title: 'Blue Furnace',
+          subTitle:
+              'heat a sample to a high enough temperature to change the microstructure',
+          fText: 'Avaiable on JHE 245/ 246/ 246A',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/blue.jpg?raw=true',
+          pageTo: BlueFurnace(),
+          materialColor: Colors.blueAccent))
+      ..add(HeroType(
+          title: 'Nikon Microscope',
+          subTitle:
+              'The purpose to grind and polish a material is to reveal the microstructure. ',
+          fText: 'Avaiable on JHE 245/ 246/ 246A',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/niko.jpg?raw=true',
+          pageTo: NikonMicro(),
           materialColor: Colors.blueAccent));
   }
 }
