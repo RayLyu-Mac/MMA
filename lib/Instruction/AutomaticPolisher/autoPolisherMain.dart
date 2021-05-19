@@ -40,7 +40,7 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
-            "Charpy Impact Test instruction",
+            "Automatic Polisher Instruction",
             style:
                 TextStyle(fontSize: _screenH / 35, fontWeight: FontWeight.bold),
           ),
@@ -61,7 +61,7 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
                   child: Stack(
                     children: [
                       Positioned(
-                          top: 250,
+                          top: 270,
                           left: 5,
                           child: Text(
                             _instructionList[index].title,
@@ -70,7 +70,7 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
                                 fontWeight: FontWeight.bold),
                           )),
                       Positioned(
-                          top: 270,
+                          top: 290,
                           left: 5,
                           child: Text(
                             _instructionList[index].subtitle,
@@ -79,7 +79,7 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
                       Positioned(
                           top: 0,
                           child: Container(
-                            height: 245,
+                            height: 265,
                             child: YoutubePlayer(
                               controller:
                                   _instructionList[index].videoController,

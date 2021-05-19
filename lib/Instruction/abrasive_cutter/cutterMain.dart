@@ -46,7 +46,7 @@ class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
         ),
         body: SafeArea(
           child: ListView.builder(
-            itemExtent: 335,
+            itemExtent: 325,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
@@ -60,7 +60,7 @@ class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
                   child: Stack(
                     children: [
                       Positioned(
-                          top: 270,
+                          top: 265,
                           left: 5,
                           child: Text(
                             _instructionList[index].title,
@@ -69,7 +69,7 @@ class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
                                 fontWeight: FontWeight.bold),
                           )),
                       Positioned(
-                          top: 290,
+                          top: 285,
                           left: 5,
                           child: Text(
                             _instructionList[index].subtitle,
@@ -78,7 +78,7 @@ class _BulkAbraCutterInstruState extends State<BulkAbraCutterInstru> {
                       Positioned(
                           top: 0,
                           child: Container(
-                            height: 265,
+                            height: 260,
                             child: YoutubePlayer(
                               controller:
                                   _instructionList[index].videoController,

@@ -8,6 +8,7 @@ import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
 import 'package:mma_mse/equipment/Rockwell.dart';
 import 'package:mma_mse/equipment/HighTempFurnace/sop.dart';
 import 'package:mma_mse/equipment/safty sheet/MSDS.dart';
+import 'package:mma_mse/equipment/autoPolisher/autoPolisherMain.dart';
 
 class HeroType {
   String title;
@@ -95,6 +96,15 @@ class HeroType {
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/hscf.jpg?raw=true',
           pageTo: SearchListExample(),
+          materialColor: Colors.blueAccent))
+      ..add(HeroType(
+          title: 'Automatic Polisher',
+          subTitle:
+              'The purpose to grind and polish a material is to reveal the microstructure. ',
+          fText: 'Avaiable on JHE 245/ 246/ 246A',
+          image:
+              'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/ap.jpg?raw=true',
+          pageTo: AutoPolisherMain(),
           materialColor: Colors.blueAccent));
   }
 }

@@ -94,7 +94,7 @@ class _SearchListExampleState extends State<SearchListExample> {
                                       return SimpleDialog(
                                         backgroundColor: property[index]
                                             .level
-                                            .withOpacity(0.8),
+                                            .withOpacity(0.9),
                                         contentPadding: EdgeInsets.fromLTRB(
                                             _screenWidth / 30,
                                             _screenH / 30,

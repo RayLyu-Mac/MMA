@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-Color green = Colors.green[400];
-Color yellow = Colors.yellow[400];
-Color blue = Colors.blue[400];
-Color grey = Colors.grey[400];
-Color red = Colors.red[400];
+Color green = Colors.green[300];
+Color yellow = Colors.yellow[300];
+Color blue = Colors.blue[300];
+Color grey = Colors.grey[300];
+Color red = Colors.red[300];
 
 class msdsData {
   String location;

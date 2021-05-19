@@ -46,7 +46,7 @@ class _RockWellinstructionState extends State<RockWellinstruction> {
         ),
         body: SafeArea(
           child: ListView.builder(
-            itemExtent: 330,
+            itemExtent: 325,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
@@ -60,7 +60,7 @@ class _RockWellinstructionState extends State<RockWellinstruction> {
                   child: Stack(
                     children: [
                       Positioned(
-                          top: 250,
+                          top: 265,
                           left: 5,
                           child: Text(
                             _instructionList[index].title,
@@ -69,7 +69,7 @@ class _RockWellinstructionState extends State<RockWellinstruction> {
                                 fontWeight: FontWeight.bold),
                           )),
                       Positioned(
-                          top: 270,
+                          top: 280,
                           left: 5,
                           child: Text(
                             _instructionList[index].subtitle,
@@ -78,7 +78,7 @@ class _RockWellinstructionState extends State<RockWellinstruction> {
                       Positioned(
                           top: 0,
                           child: Container(
-                            height: 245,
+                            height: 260,
                             child: YoutubePlayer(
                               controller:
                                   _instructionList[index].videoController,

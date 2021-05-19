@@ -94,7 +94,7 @@ class _icp_instructionState extends State<icp_instruction> {
         body: SafeArea(
           child: ListView.builder(
             controller: controller,
-            itemExtent: 335,
+            itemExtent: 325,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
@@ -108,7 +108,7 @@ class _icp_instructionState extends State<icp_instruction> {
                   child: Stack(
                     children: [
                       Positioned(
-                          top: 270,
+                          top: 265,
                           left: 5,
                           child: Text(
                             _instructionList[index].title,
@@ -117,7 +117,7 @@ class _icp_instructionState extends State<icp_instruction> {
                                 fontWeight: FontWeight.bold),
                           )),
                       Positioned(
-                          top: 290,
+                          top: 285,
                           left: 5,
                           child: Text(
                             _instructionList[index].subtitle,
@@ -126,7 +126,7 @@ class _icp_instructionState extends State<icp_instruction> {
                       Positioned(
                           top: 0,
                           child: Container(
-                            height: 265,
+                            height: 260,
                             child: YoutubePlayer(
                               controller:
                                   _instructionList[index].videoController,
