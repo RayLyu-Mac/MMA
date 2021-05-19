@@ -24,6 +24,9 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
   void initState() {
     super.initState();
     _instructionList = video().videoList();
+    for (var j = 0; j < _instructionList.length; j++) {
+      titles.add(_instructionList[j].titles);
+    }
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -45,7 +48,7 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
               DrawerHeader(
                 child: Text("Instruction For Automatic Polisher"),
               ),
-              for (var i = 0; i < titles.length; i++)
+              for (var i = 0; i < _instructionList.length; i++)
                 ScrollcustomListTile(
                     name: titles[i],
                     pageTo: i - 1,
