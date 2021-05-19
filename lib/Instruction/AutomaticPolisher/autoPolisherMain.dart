@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'autoPolisherData.dart';
 import 'package:flutter/services.dart';
+import 'package:mma_mse/customTileScroll.dart';
 
 class AutoPolisherinstruction extends StatefulWidget {
   final video videoType;
@@ -16,6 +17,8 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
   List _instructionList = List<video>();
   double _screenWidth;
   double _screenH;
+  final ScrollController controller = ScrollController();
+  List titles = [];
 
   @override
   void initState() {
@@ -36,6 +39,21 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
 
   @override
   Widget build(BuildContext context) {
+    Drawer autoPolisherInstru() => Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text("Instruction For Automatic Polisher"),
+              ),
+              for (var i = 0; i < titles.length; i++)
+                ScrollcustomListTile(
+                    name: titles[i],
+                    pageTo: i - 1,
+                    fonts: 13,
+                    controller: controller),
+            ],
+          ),
+        );
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -45,9 +63,11 @@ class _AutoPolisherinstructionState extends State<AutoPolisherinstruction> {
                 TextStyle(fontSize: _screenH / 35, fontWeight: FontWeight.bold),
           ),
         ),
+        drawer: autoPolisherInstru(),
         body: SafeArea(
           child: ListView.builder(
             itemExtent: 325,
+            controller: controller,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(

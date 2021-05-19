@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'MicroHardnessData.dart';
 import 'package:flutter/services.dart';
+import 'package:mma_mse/customTileScroll.dart';
 
 class MHTinstruction extends StatefulWidget {
   final video videoType;
@@ -15,11 +16,16 @@ class _MHTinstructionState extends State<MHTinstruction> {
   List _instructionList = List<video>();
   double _screenWidth;
   double _screenH;
+  final ScrollController controller = ScrollController();
+  List titles = [];
 
   @override
   void initState() {
     super.initState();
     _instructionList = video().videoList();
+    for (var j = 0; j < _instructionList.length; j++) {
+      titles.add(_instructionList[j].titles);
+    }
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -35,6 +41,21 @@ class _MHTinstructionState extends State<MHTinstruction> {
 
   @override
   Widget build(BuildContext context) {
+    Drawer microhardnessInstr() => Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text("Instruction For MicroHardness Tester"),
+              ),
+              for (var i = 0; i < titles.length; i++)
+                ScrollcustomListTile(
+                    name: titles[i],
+                    pageTo: i - 1,
+                    fonts: 13,
+                    controller: controller),
+            ],
+          ),
+        );
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -44,9 +65,11 @@ class _MHTinstructionState extends State<MHTinstruction> {
                 TextStyle(fontSize: _screenH / 35, fontWeight: FontWeight.bold),
           ),
         ),
+        drawer: microhardnessInstr(),
         body: SafeArea(
           child: ListView.builder(
             itemExtent: 330,
+            controller: controller,
             itemCount: _instructionList.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
