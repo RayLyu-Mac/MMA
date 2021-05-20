@@ -16,12 +16,18 @@ class _equb_mainState extends State<equb_main> {
   double _screenWidth;
   List _heroTypeList = List<HeroType>();
   double _screenWidthAdjustment;
+  List equipments = [];
   final ScrollController controller = ScrollController();
 
   @override
   void initState() {
     super.initState();
+
     _heroTypeList = HeroType().createSampleList();
+
+    for (var eq = 0; eq < _heroTypeList.length; eq++) {
+      equipments.add(_heroTypeList[eq].title);
+    }
   }
 
   @override
@@ -35,11 +41,12 @@ class _equb_mainState extends State<equb_main> {
     Drawer searchEquipMain() => Drawer(
             child: ListView(children: [
           DrawerHeader(child: Text("Equipment Avaiable in MSE")),
-          ScrollcustomListTile(
-              controller: controller,
-              name: "MicroHardness",
-              pageTo: 7,
-              fonts: 15),
+          for (var equ = 0; equ < equipments.length; equ++)
+            ScrollcustomListTile(
+                name: equipments[equ],
+                pageTo: equ,
+                fonts: 13,
+                controller: controller)
         ]));
     return Scaffold(
       appBar: AppBar(
@@ -51,7 +58,7 @@ class _equb_mainState extends State<equb_main> {
       body: SafeArea(
           child: ListView.builder(
               controller: controller,
-              itemExtent: 265.0,
+              itemExtent: 305.0,
               itemCount: _heroTypeList.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
@@ -78,12 +85,12 @@ class _equb_mainState extends State<equb_main> {
                             child: Image.network(
                               _heroTypeList[index].image,
                               fit: BoxFit.fitWidth,
-                              height: 180,
+                              height: 220,
                             ),
                           ),
                         ),
                         Positioned(
-                          top: 185.0,
+                          top: 225.0,
                           left: 18.0,
                           width: _screenWidthAdjustment,
                           child: Hero(
@@ -100,7 +107,7 @@ class _equb_mainState extends State<equb_main> {
                               )),
                         ),
                         Positioned(
-                            top: 213.0,
+                            top: 253.0,
                             left: 18.0,
                             width: _screenWidthAdjustment,
                             child: Hero(
