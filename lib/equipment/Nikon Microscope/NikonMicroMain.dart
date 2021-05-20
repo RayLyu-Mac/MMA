@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mma_mse/Instruction/CharpyImpact/charpyImpactMain.dart';
 import 'package:mma_mse/SendEmail/sendEmailMain.dart';
 import 'package:mma_mse/user_note.dart';
 import '../functionButtonMode.dart';
 import 'package:mma_mse/Search/Test/TestsDetailes/tensile_test_bg.dart';
+import 'package:mma_mse/Instruction/NikonMicro/NikonMain.dart';
 
 class NikonMicro extends StatefulWidget {
   final String location;
@@ -79,7 +79,7 @@ class _NikonMicroState extends State<NikonMicro> {
               top: _screenH / 1.56,
               left: _screenWidth / 12,
               buttonName: "Instruction",
-              pageTo: RockWellinstruction(),
+              pageTo: NikonMicroInstru(),
               warnV: "eS8gsOCzugY",
             ),
             functionButtonMode(
@@ -102,7 +102,7 @@ class _NikonMicroState extends State<NikonMicro> {
                   locationOfEqup: widget.location != null
                       ? widget.location
                       : "Not Specificed",
-                  nameOfEqup: "Charpy Impact Tester",
+                  nameOfEqup: "Nikon Microstructure",
                   emailTo: widget.emailTo != null
                       ? widget.emailTo
                       : "Please enter the email address!"),

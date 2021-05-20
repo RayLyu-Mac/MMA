@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mma_mse/Instruction/CharpyImpact/charpyImpactMain.dart';
 import 'package:mma_mse/SendEmail/sendEmailMain.dart';
 import 'package:mma_mse/user_note.dart';
 import '../functionButtonMode.dart';
 import 'package:mma_mse/Search/Test/TestsDetailes/tensile_test_bg.dart';
+import 'package:mma_mse/Instruction/blueFurnace/blueMain.dart';
 
 class BlueFurnace extends StatefulWidget {
   final String location;
@@ -75,12 +75,34 @@ class _BlueFurnaceState extends State<BlueFurnace> {
                     )),
               ),
             ),
+            Positioned(
+              top: _screenH / 2.2,
+              left: _screenWidth / 1.25,
+              child: IconButton(
+                  tooltip: "Fire Protocol",
+                  iconSize: _screenH / 20,
+                  icon: Icon(Icons.fireplace),
+                  color: Colors.redAccent,
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text("If fire happens"),
+                            backgroundColor: Colors.red[300].withOpacity(0.9),
+                            content: Text(
+                                "•If a fire occurs, follow the “McMaster University Fire Instructions” leave the room and contact a technical staff\n \n•if the fire is out of control engage the fire alarm for the building; and contact emergency response 88, then EOHSS at 24352, stay nearby to provide information to responders.\n \n•DO NOT TRY to extinguish the fire because of serious health hazard. \n \n•If you accidentally drop the sample on your self Don’t panic! Remain calm. Immediately go to the sink and rinse with cold water to try and reduce the burn, seek medical help. "),
+                          );
+                        });
+                  }),
+            ),
             functionButtonMode(
               top: _screenH / 1.56,
               left: _screenWidth / 12,
               buttonName: "Instruction",
-              pageTo: RockWellinstruction(),
-              warnV: "eS8gsOCzugY",
+              pageTo: BlueFurnaceInstr(),
+              warnNote:
+                  "•Make sure the furnace is properly grounded and no loose wires are connected to furnace\n•Extra cautios need to be taken since material won't appear hot but can cause severe tissue damage\n•Must wear all protective equipment\n•If fire occues leave the room and contact technicians",
             ),
             functionButtonMode(
               top: _screenH / 1.8,
@@ -102,7 +124,7 @@ class _BlueFurnaceState extends State<BlueFurnace> {
                   locationOfEqup: widget.location != null
                       ? widget.location
                       : "Not Specificed",
-                  nameOfEqup: "Charpy Impact Tester",
+                  nameOfEqup: "Blue Furnace",
                   emailTo: widget.emailTo != null
                       ? widget.emailTo
                       : "Please enter the email address!"),

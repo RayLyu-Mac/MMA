@@ -102,9 +102,20 @@ class video {
             ),
           )))
       ..add(video(
+          title: "Selecting the best image",
+          subtitle: "Choose a best and clear images",
+          materialcolor: Colors.blue,
+          videoController: YoutubePlayerController(
+            initialVideoId: 'IzNETDmhF9I',
+            flags: YoutubePlayerFlags(
+              autoPlay: true,
+              mute: false,
+            ),
+          )))
+      ..add(video(
           title: "Glare removal",
           subtitle: "Chose 2D or 3D, 3D is required when sample is not flat",
-          materialcolor: Colors.blue[400],
+          materialcolor: Colors.blue[600],
           videoController: YoutubePlayerController(
             initialVideoId: '9TYFOn23E_8',
             flags: YoutubePlayerFlags(

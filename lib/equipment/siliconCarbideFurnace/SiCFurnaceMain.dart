@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:mma_mse/user_note.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:mma_mse/equipment/functionButtonMode.dart';
-import 'BulkAbrasiveDashB.dart';
-import 'backG.dart';
-import 'package:mma_mse/Instruction/abrasive_cutter/cutterMain.dart';
 import 'package:mma_mse/SendEmail/sendEmailMain.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:mma_mse/user_note.dart';
+import '../functionButtonMode.dart';
+import 'package:mma_mse/Search/Test/TestsDetailes/tensile_test_bg.dart';
+import 'package:mma_mse/Instruction/SiCFurnace/SiCMain.dart';
 
-class BulkAbrasive_Main extends StatefulWidget {
+class SiCFurnace extends StatefulWidget {
   final String location;
   final String emailTo;
-  BulkAbrasive_Main(
+  SiCFurnace(
       {Key key,
       @optionalTypeArgs this.location,
       @optionalTypeArgs this.emailTo})
       : super(key: key);
 
   @override
-  _BulkAbrasive_MainState createState() => _BulkAbrasive_MainState();
+  _SiCFurnaceState createState() => _SiCFurnaceState();
 }
 
-class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
+class _SiCFurnaceState extends State<SiCFurnace> {
   double _screenWidth;
   double _screenH;
 
@@ -36,7 +33,7 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bulk Abrasive Cutter"),
+        title: Text("Silicon Carbide Furnace"),
         backgroundColor: Colors.black,
       ),
       body: SafeArea(
@@ -57,7 +54,7 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
                   constraints: BoxConstraints.expand(
                       width: _screenWidth / 2.2, height: 280),
                   child: Text(
-                    'Can find anything',
+                    'Used to measure the relative toughness of a material, more specifically, the energy absorbed by a standard notched specimen while breaking under an impact load. Has been used as an economical quality control method to determine the notch sensitivity. The standard size for specimen: 55 mm *10 mm* 10mm, having a notch machined across one of the larger dimensions.',
                     style: TextStyle(
                         fontSize: _screenH / 55, fontWeight: FontWeight.bold),
                   )),
@@ -72,7 +69,7 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
-                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/abc.jpg?raw=true"),
+                              "https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/hscf.jpg?raw=true"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(10),
                     )),
@@ -87,46 +84,51 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
                   icon: Icon(Icons.fireplace),
                   color: Colors.redAccent,
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            duration: Duration(milliseconds: 700),
-                            child: automaticModeInterFaceButton(),
-                            type: PageTransitionType.scale,
-                            alignment: Alignment.topCenter));
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text("If fire happens"),
+                            backgroundColor: Colors.red[300].withOpacity(0.9),
+                            content: Text(
+                                "•If a fire occurs, follow the “McMaster University Fire Instructions” leave the room and contact a technical staff\n \n•if the fire is out of control engage the fire alarm for the building; and contact emergency response 88, then EOHSS at 24352, stay nearby to provide information to responders.\n \n•DO NOT TRY to extinguish the fire because of serious health hazard. \n \n•If you accidentally drop the sample on your self Don’t panic! Remain calm. Immediately go to the sink and rinse with cold water to try and reduce the burn, seek medical help. "),
+                          );
+                        });
                   }),
             ),
             functionButtonMode(
               top: _screenH / 1.56,
               left: _screenWidth / 12,
               buttonName: "Instruction",
+              pageTo: SiCFurnaceInstr(),
               warnNote:
-                  "•Ensure the sample is securely fastened \n•Cutting wheel is completely stoped before opening the canopy\n•Do not have the blade the touching the sample prior engaging the motor\n•Cut the sample slowly\n•Sample size should be smaller than 2 inches",
-              pageTo: BulkAbraCutterInstru(),
+                  "•Make sure the furnace is properly grounded and no loose wires are connected to furnace\n•Extra cautios need to be taken since material won't appear hot but can cause severe tissue damage\n•Must wear all protective equipment\n•If fire occues leave the room and contact technicians",
             ),
             functionButtonMode(
               top: _screenH / 1.8,
               left: _screenWidth / 12,
-              buttonName: "Schedulling",
-              url: _launchURL,
+              buttonName: "Theory",
+              pageTo: tensile_test_bg(),
             ),
             functionButtonMode(
-                top: _screenH / 1.8,
-                left: _screenWidth / 2 + 16,
-                buttonName: "Background",
-                pageTo: BulkAbrasiveCutter()),
+              top: _screenH / 1.8,
+              left: _screenWidth / 2 + 16,
+              buttonName: "Result",
+              pageTo: tensile_test_bg(),
+            ),
             functionButtonMode(
-                top: _screenH / 1.56,
-                left: _screenWidth / 2 + 16,
-                buttonName: "Manager",
-                pageTo: EmailContent(
-                    locationOfEqup: widget.location != null
-                        ? widget.location
-                        : "Not Specificed",
-                    nameOfEqup: "Charpy Impact Tester",
-                    emailTo: widget.emailTo != null
-                        ? widget.emailTo
-                        : "Please enter the email address!")),
+              top: _screenH / 1.56,
+              left: _screenWidth / 2 + 16,
+              buttonName: "Manager",
+              pageTo: EmailContent(
+                  locationOfEqup: widget.location != null
+                      ? widget.location
+                      : "Not Specificed",
+                  nameOfEqup: "Silicon Carbide Furnace",
+                  emailTo: widget.emailTo != null
+                      ? widget.emailTo
+                      : "Please enter the email address!"),
+            ),
             Positioned(
                 top: _screenH / 1.33,
                 left: _screenWidth / 1.3,
@@ -138,22 +140,13 @@ class _BulkAbrasive_MainState extends State<BulkAbrasive_Main> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => user_note(
-                                    loc: "JHE 236 ICP-OES",
-                                    themem_color: Colors.red[100],
+                                    loc: "ML Charpy Impact",
+                                    themem_color: Colors.green[100],
                                   )));
                     }))
           ],
         ),
       ),
     );
-  }
-}
-
-_launchURL() async {
-  const url = 'https://msebooking.mcmaster.ca/';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
   }
 }

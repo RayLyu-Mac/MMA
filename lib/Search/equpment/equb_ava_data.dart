@@ -6,8 +6,7 @@ import 'package:mma_mse/equipment/Automatic Micro Hardness Tester/AMHMain.dart';
 import 'package:mma_mse/equipment/CharpyImpact/Charpy.dart';
 import 'package:mma_mse/equipment/Keyence Microscope/keyenceMain.dart';
 import 'package:mma_mse/equipment/Rockwell.dart';
-import 'package:mma_mse/equipment/HighTempFurnace/sop.dart';
-import 'package:mma_mse/equipment/safty sheet/MSDS.dart';
+import 'package:mma_mse/equipment/siliconCarbideFurnace/SiCFurnaceMain.dart';
 import 'package:mma_mse/equipment/autoPolisher/autoPolisherMain.dart';
 import 'package:mma_mse/equipment/Nikon Microscope/NikonMicroMain.dart';
 import 'package:mma_mse/equipment/blueFurnace/blurFMain.dart';
@@ -97,7 +96,7 @@ class HeroType {
           fText: 'Avaiable on JHE 244',
           image:
               'https://github.com/RayLyu-Mac/MMA/blob/master/assest/equipment/hscf.jpg?raw=true',
-          pageTo: SearchListExample(),
+          pageTo: SiCFurnace(),
           materialColor: Colors.blueAccent))
       ..add(HeroType(
           title: 'Automatic Polisher',
